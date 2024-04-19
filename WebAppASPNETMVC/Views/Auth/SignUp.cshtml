@@ -1,0 +1,62 @@
+﻿@model SignUpViewModel
+@{
+	ViewData["Title"] = "Sign up";
+}
+<section id="signup">
+	<div class="container">
+		<form method="post" asp-controller="Auth" asp-action="SignUp" novalidate>
+			<h1>Sign up</h1>
+			<p>Already have an account? Sign in <a asp-controller="Auth" asp-action="SignIn">here</a>.</p>
+
+			<div class="content">
+				<div id="form-firstname" class="input-group">
+					<label asp-for="Form.FirstName"></label>
+					<span asp-validation-for="Form.FirstName"></span>
+					<input type="text" asp-for="Form.FirstName" />
+				</div>
+
+				<div id="form-lastname" class="input-group">
+					<label asp-for="Form.LastName"></label>
+					<span asp-validation-for="Form.LastName"></span>
+					<input type="text" asp-for="Form.LastName" />
+				</div>
+
+				<div id="form-email" class="input-group">
+					<label asp-for="Form.Email"></label>
+					<span asp-validation-for="Form.Email"></span>
+					<input type="email" asp-for="Form.Email" />
+				</div>
+
+				<div id="form-password" class="input-group">
+					<label asp-for="Form.PassWord"></label>
+					<span asp-validation-for="Form.PassWord"></span>
+					<input type="password" asp-for="Form.PassWord" />
+				</div>
+
+				<div id="form-confirm" class="input-group">
+					<label asp-for="Form.Confirm"></label>
+					<span asp-validation-for="Form.Confirm"></span>
+					<input type="password" asp-for="Form.Confirm" />
+				</div>
+
+				<div id="form-terms" class="checkbox">
+					<div class="checkbox-group">
+						<input type="checkbox" asp-for="Form.TermsAndConditions" />
+						<label asp-for="Form.TermsAndConditions"> I agree to the <a asp-controller="About" asp-action="Terms">Terms</a> & <a asp-controller="About" asp-action="Conditions">Conditions</a>.</label>
+					</div>
+
+					<span asp-validation-for="Form.TermsAndConditions"></span>
+
+				</div>
+
+				<button id="form-button" class="btn-theme-s" type="submit">Sign up</button>
+
+
+			</div>
+
+
+		</form>
+	</div>
+</section>
+
+@await Html.PartialAsync("_ValidationScriptPartial")

@@ -1,0 +1,161 @@
+
+#Library {
+    padding: 4rem 0;
+
+
+    .container {
+        .header {
+
+            h1 {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+            }
+
+            #form-filters {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                margin-bottom: 1rem;
+
+                .input-search-group {
+                    #searchQuery {
+                    }
+
+                    i {
+                    }
+                }
+            }
+        }
+
+
+
+
+
+
+        .course-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+
+
+
+
+            .course {
+                position: relative;
+                display: block;
+                border-radius: 8px;
+                overflow: hidden;
+                text-decoration: none;
+                color: $gray-700;
+
+
+
+                &:hover {
+                    box-shadow: 0 0 14px 4px $gray-500;
+                }
+
+                .bestseller {
+                    position: absolute;
+                    top: 1.2rem;
+                    left: 1rem;
+                    background-color: $success;
+                    color: white;
+                    padding: 4px 12px;
+                    border-radius: 4px;
+                }
+
+                .bookmark {
+                    position: absolute;
+                    top: 1rem;
+                    right: 1rem;
+                    z-index: 999;
+                }
+
+                img {
+                    width: 100%;
+                }
+
+                .content {
+                    padding: 1rem 2rem;
+
+                    .title {
+                        font-size: 20px;
+                    }
+
+                    .author {
+                        font-size: 14px;
+                        margin: 0.5rem 0;
+                    }
+
+                    .pricing {
+                        display: flex;
+                        gap: 1rem;
+                        font-size: 18px;
+                        font-weight: 600;
+
+                        .discount {
+                            text-decoration: line-through;
+                            color: red;
+                            margin-left: 10px;
+                        }
+
+                        .price {
+                            font-size: 18px;
+                            font-weight: 600;
+                            color: $theme;
+                        }
+
+                        .discount-enable {
+                            text-decoration: line-through;
+                            color: $gray-600;
+                            font-size: 18px;
+                            font-weight: 400;
+                        }
+                    }
+
+
+
+                    .footer {
+                        color: $gray-600;
+                        border-top: 1px solid $gray-400;
+                        display: flex;
+                        gap: 2rem;
+                        margin-top: 1rem;
+                        padding-top: 1rem;
+
+                        .hours {
+                            i {
+                                margin-right: 5px;
+                            }
+                        }
+
+                        .likes {
+                            i {
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .pageSelector {
+            display: flex;
+            justify-content: center;
+            font-size: x-large;
+
+
+            a {
+                padding: 10px;
+                text-decoration: none;
+                color: grey;
+
+                &:hover {
+                    background-color: #2980B9;
+                }
+            }
+        }
+    }
+}

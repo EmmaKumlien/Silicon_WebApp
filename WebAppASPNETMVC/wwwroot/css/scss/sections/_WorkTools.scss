@@ -1,0 +1,47 @@
+.Work-tools {
+    padding: 4rem 0;
+
+
+    .container {
+        display: grid;
+        text-align: center;
+
+
+
+
+        .Toolinfo {
+            width: 60%;
+            margin: 2rem auto 4rem auto;
+           
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+
+
+            .box {
+                text-align: left;
+                padding: 1rem;
+                
+
+
+                img {
+                    display: flex;
+                    padding-bottom: 20px;
+                }
+
+                p {
+                }
+
+                &:hover {
+                    box-shadow: 0 0 14px 4px rgba(0,0,0,0.2);
+                    border-radius:8px;
+                    transition:0.2s ease-in-out;
+                   
+                }
+            }
+        }
+    }
+}

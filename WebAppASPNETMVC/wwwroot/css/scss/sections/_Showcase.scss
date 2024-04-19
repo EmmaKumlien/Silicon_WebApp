@@ -1,0 +1,62 @@
+
+#showcase {
+    padding: 7rem 0 7rem 0;
+   
+    position: relative;
+
+    .container {
+        display: flex;
+        align-items: center;
+
+
+        .showcase-info {
+            padding-top: 2rem;
+            text-align: start;
+            width: 40%;
+
+
+            h1 {
+                @include d4;
+                line-height: 1.2;
+                width: 80%;
+            }
+
+            p {
+                margin: 2rem 0;
+                color: $gray-600;
+                width: 70%;
+            }
+
+            a {
+                width: 40%;
+            }
+
+            .largets-brands {
+                margin-top: 7rem;
+                
+                
+
+                h6 {
+                }
+
+                .brands {
+                    
+                    display:flex;
+                    gap:3rem;
+
+
+                    img {
+                        
+                    }
+                }
+            }
+        }
+
+        .showcase-img {
+            position: absolute;
+            right: 0;
+            top: 10%;
+            width: 50%;
+        }
+    }
+}

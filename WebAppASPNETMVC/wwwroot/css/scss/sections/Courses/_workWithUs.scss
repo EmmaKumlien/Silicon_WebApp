@@ -1,0 +1,37 @@
+#Workwithus {
+    padding: 4rem 0;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        background-color: #f3f6ff;
+        padding: 40px;
+
+        .work {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .workInfo {
+                padding: 1px;
+
+                p {
+                    color: $gray-700;
+                }
+
+                h2 {
+                    width: 80%;
+                }
+
+                .btn-theme {
+                    width: 40%;
+                   
+                }
+            }
+
+            .workimg {
+                display: block;
+            }
+        }
+    }
+}

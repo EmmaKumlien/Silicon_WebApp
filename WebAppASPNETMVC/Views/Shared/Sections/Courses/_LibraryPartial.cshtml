@@ -1,0 +1,75 @@
+﻿@model CourseIndexViewModel
+
+<section id="Library">
+    <div class="container">
+
+        @*Css funkar ej med denna, course-items lägger sig utanför containern då webbläsaren lägger till en div*@
+      @*   <div class="header">
+            <h1>Courses</h1>
+             <form id="form-filters">
+                <select title="select">
+                    <option>All Categories</option>
+                    <div class="input-search-group">
+                        <input id="searchQuery" name="searchQuery" placeholder="Search courses" />
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </select>
+            </form>
+        </div> *@
+
+		<div class="course-items">
+            @if (Model.Course != null)
+            {
+                @foreach (var courses in Model.Course)
+                {
+                    <a class="course" asp-action="Details" asp-controller="Course" asp-route-id="@courses.Id">
+                        @if (courses.IsBestseller)
+                        {
+                            <div class="bestseller">Best Seller</div>
+                        }
+                        <button class="btn btn-circle bookmark"><i class="fa-regular fa-bookmark"></i></button>
+
+                        <img src="~/images/Courses/CourseLibrary/@courses.Image" alt="@courses.Title" />
+
+                        <div class="content">
+                            <h5 class="title">@courses.Title</h5>
+                            <p class="author">@courses.Author</p>
+                            <div class="pricing">
+                                @if (!string.IsNullOrEmpty(courses.DiscountPrice))
+                                {
+                                    <div class="discount">@courses.DiscountPrice</div>
+                                }
+                                <div class="price @(!string.IsNullOrEmpty(courses.DiscountPrice)?"discount-enable" : "")">@courses.Price</div>
+                            </div>
+                            <div class="footer">
+                                <div class="hours">
+                                    <i class="fa-regular fa-clock"></i> @courses.Hours hours
+                                </div>
+                                <div class="likes">
+                                    <i class="fa-regular fa-thumbs-up"></i> @courses.LikesInProcent (@courses.LikesInNumbers)
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                }
+            }
+        </div>
+
+        <div class="pageSelector">
+            <a href="#">«</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">»</a>
+        </div>
+
+
+    </div>
+        
+
+ 
+    
+</section>
+

@@ -1,0 +1,20 @@
+.breadcrumbblock {
+
+
+    .container {
+        display: block;
+        justify-content: start;
+        padding: 20px;
+
+
+        .breadcrumb {
+            display: flex;
+            gap: 1rem;
+
+            li {
+                text-decoration: none;
+                color: $gray-700;
+            }
+        }
+    }
+}

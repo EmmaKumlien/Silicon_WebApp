@@ -1,0 +1,59 @@
+﻿@model SignInViewModel
+@{
+	ViewData["Title"] = "Sign In";
+}
+
+<section id="signin">
+	<div class="container">
+		
+			@if (!string.IsNullOrEmpty(ViewData["StatusMessage"]?.ToString()))
+			{
+				<div class="signin-error">
+					@ViewData["StatusMessage"]
+				</div>
+				
+			}
+			<form method="post" asp-controller="Auth" asp-action="SignIn" asp-route-ReturnUrl="@ViewData["ReturnUrl"]" novalidate>
+				<h1>Welcome Back</h1>
+				<p>Don't have an account yet? Sign up <a asp-controller="Auth" asp-action="SignUp">here</a>.</p>
+
+				<div class="content">
+
+					<div id="form-email" class="input-group">
+						<label asp-for="Email"></label>
+						<span asp-validation-for="Email"></span>
+						<input type="email" asp-for="Email" />
+					</div>
+
+					<div id="form-password" class="input-group">
+						<label asp-for="Password"></label>
+						<span asp-validation-for="Password"></span>
+						<input type="password" asp-for="Password" />
+					</div>
+
+
+					<div id="form-remember" class="checkbox">
+						<div class="checkbox-group">
+							<input type="checkbox" asp-for="IsPresistent" />
+							<label asp-for="IsPresistent"></label>
+						</div>
+
+					</div>
+
+				<button id="form-button" class="btn-theme-s" type="submit" <i class="fa-solid fa-arrow-right-to-bracket"></i>Sign in</button>
+
+					<a id="forgot-password" asp-controller="Account" asp-action="ChangePassword">Forgot your password?</a>
+
+					<hr />
+					<div id="external-signin">
+						<a class="btn-gray" asp-controller="external" asp-action="signin"><i class="fa-brands fa-google"></i>Google</a>
+						<a class="btn-gray" asp-controller="external" asp-action="signin"><i class="fa-brands fa-facebook"></i>Facebook</a>
+
+					</div>
+
+				</div>
+			</form>
+
+
+	</div>
+</section>

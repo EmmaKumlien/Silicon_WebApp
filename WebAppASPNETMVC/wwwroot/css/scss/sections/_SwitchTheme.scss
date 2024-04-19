@@ -1,0 +1,56 @@
+#lightdark {
+    position: relative;
+    height: 120vh;
+    padding: 4rem 0;
+
+
+    .switch-color-black {
+        background-color: $gray-900;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50vW;
+        z-index: -1;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        z-index: 0;
+        /*border: 1px solid red;*/
+
+
+
+        .switch-color-white {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            position: absolute;
+            z-index: 1;
+            width: inherit;
+
+            .white-text {
+                color: white;
+                text-align: end;
+                width: 50%;
+            }
+
+            .black-text {
+                color: $gray-900;
+                text-align: start;
+                width: 50%;
+                margin-left: 20px;
+            }
+        }
+
+        img {
+            position: absolute;
+            z-index: 1;
+            top: 8rem;
+            margin-left: 7px;
+        }
+    }
+}

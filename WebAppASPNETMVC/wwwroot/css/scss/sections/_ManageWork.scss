@@ -1,0 +1,64 @@
+#manage-work {
+    padding: 4rem 0;
+    
+
+    .container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+        img {
+            flex: 1;
+           
+        }
+
+        .content {
+            text-align: center;
+            flex: 1;
+            align-items: center;
+            text-align: center;
+
+            h1 {
+                padding-bottom: 1rem;
+            }
+
+            ul {
+                list-style: none;
+                margin-left: 3.5rem;
+
+                li {
+                    display: flex;
+                }
+
+                i {
+                    color: #6366F1;
+                    font-weight: 900;
+                    margin-right: 20px;
+                }
+            }
+
+
+            a {
+                margin-left: 5.5rem;
+                text-decoration: none;
+                color: white;
+                width: 50%;
+                text-align: center;
+
+                btn {
+                }
+
+                i {
+                    margin: 0 0 0 0;
+                    padding: 0;
+                }
+
+
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
