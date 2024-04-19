@@ -11,13 +11,12 @@
     }
 
     .alert {
-        display:flex;
-        justify-content:center;
-        align-items:center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 80%;
         height: 2rem;
         padding: 2rem 1rem;
-
     }
 
     aside {
@@ -35,11 +34,23 @@
             margin: 1.2rem;
 
             img {
-                height: 100px;
+                height: 150px;
                 width: auto;
-                border-radius: 60px;
+                border-radius: 80px;
+                position:relative;
             }
 
+            .btn-circle{
+                position:absolute;
+                top:15rem;
+                left:16rem;
+
+                &:hover{
+                    background-color:$gray-100;
+                }
+            }
+                
+                
             h5 {
                 margin-top: 1rem;
                 margin-bottom: 0;

@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Context;
 using Infrastructure.Entities;
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -9,8 +10,9 @@ using WebAppASPNETMVC.ViewModels;
 
 namespace WebAppASPNETMVC.Controllers;
 [Authorize]
-public class AccountController(UserManager<UserEntity> userManager, DataContext context) : Controller
+public class AccountController(UserManager<UserEntity> userManager, DataContext context, AccountService accountService) : Controller
 {
+	private readonly AccountService _accountService = accountService;
 	private readonly UserManager<UserEntity> _userManager = userManager;
 	private readonly DataContext _context = context;
 
@@ -138,20 +140,15 @@ public class AccountController(UserManager<UserEntity> userManager, DataContext 
 	[HttpPost]
 	public async Task<IActionResult> UploadProfileImage(IFormFile file)
 	{
-		var user = await _userManager.GetUserAsync(User);
 
-		if (user != null && file != null && file.Length != 0)
+		var result = await _accountService.UpdateProfileImage(User, file);
+		
+
+		if (result == true)
 		{
-
-			var fileName = $"p_{user.Id}_{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
-			var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/Account",fileName);
-
-			using var fs = new FileStream(filePath, FileMode.Create);
-			await file.CopyToAsync(fs);
-
-			user.ProfileImage = fileName;
-			await _userManager.UpdateAsync(user);
-        }
+			TempData["StatusMessage"] = "New profile picture uploaded";
+			
+		}
 		else
 		{
 			TempData["StatusMessage"] = "Unable to upload profile picture";

@@ -1437,9 +1437,18 @@ footer .container span {
   margin: 1.2rem;
 }
 #account-details aside .profile-info img {
-  height: 100px;
+  height: 150px;
   width: auto;
-  border-radius: 60px;
+  border-radius: 80px;
+  position: relative;
+}
+#account-details aside .profile-info .btn-circle {
+  position: absolute;
+  top: 15rem;
+  left: 16rem;
+}
+#account-details aside .profile-info .btn-circle:hover {
+  background-color: #F3F6FF;
 }
 #account-details aside .profile-info h5 {
   margin-top: 1rem;

@@ -1,12 +1,13 @@
 using Infrastructure.Context;
 using Infrastructure.Entities;
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
-
+builder.Services.AddScoped<AccountService>();
 builder.Services.AddHttpClient();
 builder.Services.AddDbContext<DataContext>(x=> x.UseSqlServer(builder.Configuration.GetConnectionString("WebApp_Database")));
 builder.Services.AddIdentity<UserEntity, IdentityRole>(x=>

@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\css\scss\sections\Courses\" />
+    <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
 
 </Project>
